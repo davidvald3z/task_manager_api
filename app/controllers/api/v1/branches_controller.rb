@@ -4,7 +4,7 @@ module Api
         before_action :set_branch, only: %i[show update destroy]
   
         def index
-          @branches = Branch.all
+          @branches = Branch.all.order(:name)
           render json: @branches
         end
   
