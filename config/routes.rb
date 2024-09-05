@@ -5,6 +5,8 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :branches
       resources :movements
+      get 'sales', to: 'movements#index', defaults: { type: 'sales' }
+      get 'expenses', to: 'movements#index', defaults: { type: 'expenses' }
     end
   end
   
