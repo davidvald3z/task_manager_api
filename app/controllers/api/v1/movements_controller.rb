@@ -5,9 +5,9 @@ module Api
   
         def index
             if params[:type] == 'sales'
-              @movements = Movement.includes(:branch).where(movement_type: 'I').order(movement_date: :desc).limit(50)
+              @movements = Movement.sales.includes(:branch).order(movement_date: :desc).limit(50)
             elsif params[:type] == 'expenses'
-              @movements = Movement.includes(:branch).where(movement_type: 'E').order(movement_date: :desc).limit(50)
+              @movements = Movement.expenses.includes(:branch).order(movement_date: :desc).limit(50)
             else
               @movements = Movement.includes(:branch).all.order(movement_date: :desc).limit(50)
             end
