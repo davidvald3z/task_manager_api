@@ -1,8 +1,7 @@
 FactoryBot.define do
   factory :movement do
-    type { "" }
     description { "MyString" }
-    amount { "9.99" }
-    active { "" }
+    amount { 199.99 }
+    active { true }
   end
 end
